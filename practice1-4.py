@@ -7,7 +7,7 @@ i = 1
 while debt > 0:
     interest = debt * (0.14 / 12)
     debt += interest
-    if debt <= 29654:
+    if debt <= 30000:
         repay = debt
         msg = "返済完了"
     else:
