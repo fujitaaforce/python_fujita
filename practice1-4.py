@@ -1,12 +1,10 @@
 # 課題4
-from decimal import Decimal, ROUND_HALF_UP
 debt = 250000
 repay = 30000
 i = 1
 
 while debt > 0:
-    interest = debt * (0.14 / 12)
-    debt += interest
+    debt = debt * (1+(0.14 / 12))
     if debt <= 30000:
         repay = debt
         msg = "返済完了"
