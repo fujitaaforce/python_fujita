@@ -1,6 +1,8 @@
 # 課題3
-weight = 50
-hight = 1.7
+print("体重を入力してください")
+weight = int(input())
+print("身長を入力してください")
+hight = int(input())
 bmi = weight / (hight ** 2)
 msg = ""
 if bmi<18.5:
