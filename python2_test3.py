@@ -14,7 +14,7 @@ def aspect_calcurator(height, width):
         rest = now_rest
     height_aspect = math.trunc(height / cal_number)
     width_aspect = math.trunc(width / cal_number)
-    msg = "縦" + str(height) + "px 横" + str(width) + "px アスペクト比" + str(height_aspect) + ":" + str(width_aspect) + "です"
+    msg = "縦" + str(height) + "px 横" + str(width) + "px アスペクト比" + str(width_aspect) + ":" + str(height_aspect) + "です"
     return msg
 print("画像ファイルのパスを入力してください")
 path=str(input())
