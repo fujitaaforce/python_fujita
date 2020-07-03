@@ -1,13 +1,10 @@
 from PIL import Image
 import os
 import math
+
 def aspect_calcurator(height, width):
-    if height >= width:
-        cal_number = width
-        rest = height % cal_number
-    if height < width:
-        cal_number = height
-        rest=width % cal_number
+    cal_number = width
+    rest = height % cal_number
     while rest > 0:
         now_rest = cal_number % rest
         cal_number = rest
@@ -16,6 +13,7 @@ def aspect_calcurator(height, width):
     width_aspect = math.trunc(width / cal_number)
     msg = "縦" + str(height) + "px 横" + str(width) + "px アスペクト比" + str(width_aspect) + ":" + str(height_aspect) + "です"
     return msg
+
 print("画像ファイルのパスを入力してください")
 path=str(input())
 height = Image.open(path).height

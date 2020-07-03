@@ -1,22 +1,16 @@
 import datetime
 
-def calcurate(year):
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                msg = "閏年です。"
-            msg = "閏年ではありません。"
-        msg = "閏年です。"
+def year_calcurate(year):
+    if year % 4 != 0 & (year % 100 == 0 & year % 400 != 0):
+        return False
     else:
-        msg = "閏年ではありません。"
-    return msg
+        return True
+
 now = datetime.date.today()
 print("現在日は西暦{}年{}月{}日です。".format(now.year, now.month, now.day))
-year = now.year
-i = -1
-while i<2 :
-    msg = calcurate(year+i)
-    i += 1
-print("現在日は" + msg)
-print("昨年の同じ日は" + msg)
-print("来年の同じ日は" + msg)
+years = (now.year, now.year - 1, now.year +1)
+for year in years :
+    if year_calcurate(year):
+        print(str(year) + "年は閏年です。")
+    else:
+        print(str(year) + "年は閏年ではありません。")
